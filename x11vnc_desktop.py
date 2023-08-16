@@ -13,9 +13,8 @@ import subprocess
 import time
 import os
 
-owner = "x11vnc"
 proj = os.path.basename(sys.argv[0]).split('_')[0]
-image = owner + "/docker-desktop"
+image = "x11vnc-desktop-chrome"
 tag = "latest"
 projdir = "project"
 workdir = "project"

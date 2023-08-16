@@ -110,6 +110,13 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
          ln -s -f /usr/local/noVNC/utils/novnc_proxy /usr/local/noVNC/utils/launch.sh)) && \
     rm -rf /tmp/* /var/tmp/*
 
+# Install Google Chrome browser
+RUN apt-get update && \
+    apt-get install -y libnspr4 libnss3 libu2f-udev libvulkan1 wget &&\
+    curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i ./google-chrome-stable_current_amd64.deb && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # Install latest version of x11vnc from source
 # Also, fix issue with Shift-Tab not working
 # https://askubuntu.com/questions/839842/vnc-pressing-shift-tab-tab-only
